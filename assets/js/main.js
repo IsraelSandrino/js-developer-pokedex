@@ -5,22 +5,28 @@ const maxRecords = 151
 const limit = 10
 let offset = 0;
 
+// Lista de Pokemons
 function convertPokemonToLi(pokemon) {
     return `
-        <li class="pokemon ${pokemon.type}">
-            <span class="number">#${pokemon.number}</span>
-            <span class="name">${pokemon.name}</span>
+        <li class="pokemon ${pokemon.type}" onclick="openPokemonDetail()">
+                <span class="number">#${pokemon.number}</span>
+                <span class="name">${pokemon.name}</span>
 
-            <div class="detail">
-                <ol class="types">
-                    ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
-                </ol>
+                <div class="detail">
+                    <ol class="types">
+                        ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+                    </ol>
 
-                <img src="${pokemon.photo}"
-                     alt="${pokemon.name}">
-            </div>
+                    <img src="${pokemon.photo}"
+                        alt="${pokemon.name}">
+                </div>
         </li>
     `
+}
+
+function openPokemonDetail() {
+    const detailsWindow = window.open('/js-developer-pokedex/pokemon_details.html', "_self")
+    detailsWindow.focus()
 }
 
 function loadPokemonItens(offset, limit) {
