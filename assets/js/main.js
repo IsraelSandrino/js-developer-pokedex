@@ -25,7 +25,7 @@ function convertPokemonToLi(pokemon) {
 }
 
 function openPokemonDetail() {
-    const detailsWindow = window.open('/js-developer-pokedex/pokemon_details.html', "_self")
+    const detailsWindow = window.open('pokemon_details.html', "_self")
     detailsWindow.focus()
 }
 

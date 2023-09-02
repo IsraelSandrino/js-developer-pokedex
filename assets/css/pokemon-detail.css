@@ -1,5 +1,6 @@
 .backward {
-    margin-top: 1rem;;
+    margin: 2rem 0 0 1rem;
+    color: #fff;
 }
 
 .pokemons {
@@ -15,7 +16,7 @@
 }
 
 .grass {
-    background-color: #77c850;
+    background-color: #46d1b2;
 }
 
 .fire {
@@ -133,29 +134,63 @@
 
 .pokemon img {
     max-width: 100%;
-    height: 170px;
-    margin: 3rem auto;
+    height: 50%;
+    margin: 4rem auto;
 }
 
-.pagination {
+.li-details {
+    background: #fff;
+    height: calc(100vh - 417px);
+    border-radius: 25px 25px 0 0;
+    padding: 0 1.5rem;
+    font-size: .875rem;
+    margin-top: -130px;
+}
+
+.li-details .nav-list {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 1rem;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+    border-bottom: 1px solid #d7d9da;
 }
 
-.pagination button {
-    padding: .25rem .5rem;
-    margin: .25rem 0;
-    font-size: .625rem;
-    color: #fff;
-    background-color: #6c79db;
-    border: none;
-    border-radius: 1rem;
+.item  {
+    color: #a8a8a8;
+    padding: 3rem 0.25rem 1rem 0.25rem;
 }
 
+.item:hover {
+    color: #000;
+}
+
+.active {
+    font-weight: bold;
+    color: #000;
+    border-bottom: 2px solid #8b97e7;
+}
+
+.about-breeding {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.about-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-list .about-item{
+    line-height: 1.85rem;
+}
+
+.about-characteristics {
+    display: inline-block;
+    width: 35%;
+    color: #a8a8a8;
+}
 /* @media screen and (min-width: 380px) {
     .pokemons {
         grid-template-columns: 1fr 1fr;

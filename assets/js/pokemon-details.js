@@ -33,6 +33,55 @@ function convertPokemonToLi(pokemon) {
                             alt="${pokemon.name}">
                 </li>
             </ol>
+
+            <div class="li-details">
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li class="item active">About</li>
+                        <li class="item">Base States</li>
+                        <li class="item">Evolution</li>
+                        <li class="item">Moves</li>
+                    </ul>
+                </nav>
+
+                <div>
+                    <ol class="about-list">
+                        <li class="about-item">
+                            <span class="about-characteristics">Species</span>
+                            <span>Seed</span>
+                        </li>
+                        <li class="about-item">
+                            <span class="about-characteristics">Height</span>
+                            <span>2'13.6" (0.7cm)</span>
+                        </li>
+                        <li class="about-item">
+                            <span class="about-characteristics">Weight</span>
+                            <span>15.2 lbs (6.0kg)</span>
+                        </li>
+                        <li class="about-item">
+                            <span class="about-characteristics">Abilities</span>
+                            <span>Overgrow, Chlorophyl</span>
+                        </li>
+                    </ol>
+                    
+                    <span class="about-breeding">Breeding</span>
+
+                    <ol class="about-list">
+                        <li class="about-item">
+                            <span class="about-characteristics">Gender</span>
+                            <span>87,5% 12.5%</span>
+                        </li>
+                        <li class="about-item">
+                            <span class="about-characteristics">Egg Groups</span>
+                            <span>Monster</span>
+                        </li>
+                        <li class="about-item">
+                            <span class="about-characteristics">Egg Cycle</span>
+                            <span>Grass</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
         </section>
     `
 }
