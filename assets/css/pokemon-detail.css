@@ -132,19 +132,18 @@
     text-transform: capitalize;
 }
 
+/* PAREI AQUI */
 .pokemon img {
-    max-width: 100%;
-    height: 50%;
-    margin: 4rem auto;
+    
 }
 
 .li-details {
     background: #fff;
-    height: calc(100vh - 417px);
+    /* height: calc(100vh - 417px); */
     border-radius: 25px 25px 0 0;
     padding: 0 1.5rem;
     font-size: .875rem;
-    margin-top: -130px;
+    bottom: 0;
 }
 
 .li-details .nav-list {
