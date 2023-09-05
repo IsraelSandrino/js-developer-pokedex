@@ -132,10 +132,10 @@
     text-transform: capitalize;
 }
 
-/* PAREI AQUI */
+/* PAREI AQUI 
 .pokemon img {
     
-}
+}*/
 
 .li-details {
     background: #fff;
@@ -190,6 +190,11 @@
     width: 35%;
     color: #a8a8a8;
 }
+
+.about-item .abilities {
+    text-transform: capitalize;
+}
+
 /* @media screen and (min-width: 380px) {
     .pokemons {
         grid-template-columns: 1fr 1fr;

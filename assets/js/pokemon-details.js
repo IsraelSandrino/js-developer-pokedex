@@ -25,7 +25,7 @@ function convertPokemonToLi(pokemon) {
                         </div>
 
                         <div class="number">
-                            <span >#${pokemon.number}</span>
+                            <span >#${pokemon.id}</span>
                         </div>
                     </div>
 
@@ -52,15 +52,17 @@ function convertPokemonToLi(pokemon) {
                         </li>
                         <li class="about-item">
                             <span class="about-characteristics">Height</span>
-                            <span>2'13.6" (0.7cm)</span>
+                            <span>${pokemon.height} cm</span>
                         </li>
                         <li class="about-item">
                             <span class="about-characteristics">Weight</span>
-                            <span>15.2 lbs (6.0kg)</span>
+                            <span>${pokemon.weight} kg</span>
                         </li>
                         <li class="about-item">
                             <span class="about-characteristics">Abilities</span>
-                            <span>Overgrow, Chlorophyl</span>
+                            <span class="abilities">
+                                ${pokemon.abilities.map((ability) => `${ability} `).join('')}
+                            </span>
                         </li>
                     </ol>
                     
@@ -73,7 +75,7 @@ function convertPokemonToLi(pokemon) {
                         </li>
                         <li class="about-item">
                             <span class="about-characteristics">Egg Groups</span>
-                            <span>Monster</span>
+                            <span>${pokemon.egg}</span>
                         </li>
                         <li class="about-item">
                             <span class="about-characteristics">Egg Cycle</span>
