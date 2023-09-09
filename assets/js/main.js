@@ -24,21 +24,9 @@ function convertPokemonToLi(pokemon) {
     `
 }
 
-function openPokemonDetail(id, pokemonDetails) {
-
-    const speciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${id}/`
-
-    fetch(speciesUrl)
-        .then((response) => response.json())
-        .then((pokemonDetails) => {
-            localStorage.setItem('pokemonDetails', JSON.stringify(pokemonDetails));
-
-            const detailsWindow = window.open('pokemon_details.html', '_self');
-            detailsWindow.focus();
-        })
-        .catch((error) => {
-            console.error("Erro ao carregar informações do Pokémon:", error);
-        });
+function openPokemonDetail() {
+    const detailsWindow = window.open('pokemon_details.html', '_self');
+    detailsWindow.focus();
 }
 
 function loadPokemonItens(offset, limit) {

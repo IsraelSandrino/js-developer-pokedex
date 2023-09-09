@@ -3,6 +3,8 @@ const pokemonDetails = document.getElementById('pokemonDetails')
 const maxRecords = 151
 const limit = 1
 let offset = 0;
+let id = 2
+
 
 // Lista de Pokemons
 function convertPokemonToLi(pokemon) {
@@ -75,7 +77,7 @@ function convertPokemonToLi(pokemon) {
                         </li>
                         <li class="about-item">
                             <span class="about-characteristics">Egg Groups</span>
-                            <span>${pokemon.egg_groups}</span>
+                            <span>${pokemon.species}</span>
                         </li>
                         <li class="about-item">
                             <span class="about-characteristics">Egg Cycle</span>
@@ -88,11 +90,6 @@ function convertPokemonToLi(pokemon) {
     `
 }
 
-function openPokemonDetail() {
-    const detailsWindow = window.open('/js-developer-pokedex/pokemon_details.html', "_self")
-    detailsWindow.focus()
-}
-
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
         const newHtml = pokemons.map(convertPokemonToLi).join('')
@@ -101,3 +98,12 @@ function loadPokemonItens(offset, limit) {
 }
 
 loadPokemonItens(offset, limit)
+
+function loadPokemonSpecie(id) {
+    pokeSpecieApi.getSpeciePokemon(id).then((pokemons = []) => {
+        const newHtml = pokemons.map(convertPokemonToLi).join('')
+        pokemonDetails.innerHTML += newHtml
+    })
+}
+
+loadPokemonSpecie(id)

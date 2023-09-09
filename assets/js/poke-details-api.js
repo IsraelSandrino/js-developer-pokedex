@@ -1,18 +1,24 @@
-// Recupere os detalhes do Pokémon do localStorage
-const pokemonDetails = JSON.parse(localStorage.getItem('pokemonDetails'));
+const pokeSpecieApi = {}
 
-// Exiba os detalhes do Pokémon no DOM
-const pokemonDetailsContainer = document.getElementById('pokemonDetailsContainer');
-
-if (pokemonDetails) {
-    pokemonDetailsContainer.innerHTML = `
-        <h2>${pokemonDetails.name}</h2>
-        <img src="${pokemonDetails.photo}" alt="${pokemonDetails.name}">
-        <p>Altura: ${pokemonDetails.height}</p>
-        <p>Peso: ${pokemonDetails.weight}</p>
-        <p>Peso: ${pokemonDetails.egg_groups[0].name}</p>
-        <!-- Adicione mais detalhes conforme necessário -->
-    `;
-} else {
-    pokemonDetailsContainer.innerHTML = '<p>Detalhes do Pokémon não encontrados.</p>';
+function convertPokeApiSpecieDetailToPokemon(pokeDetail) {
+    const pokemonSpecie = new PokemonSpecie()
+    pokemonSpecie.egg_groups = pokeDetail.egg_groups[0].name
 }
+
+pokeSpecieApi.getSpeciePokemonDetail = (pokemon) => {
+    return fetch(pokemon.url)
+        .then((response) => response.json())
+        .then(convertPokeApiSpecieDetailToPokemon)
+}
+
+pokeSpecieApi.getSpeciePokemon = (id = 2) => {
+    const url = `https://pokeapi.co/api/v2/pokemon-species/${id}/`
+    
+    return fetch(url)
+    .then((response) => response.json())
+    .then((jsonBody) => jsonBody.results)
+    .then((pokemons) => pokemons.map(pokeSpecieApi.getSpeciePokemonDetail))
+    .then((specieRequest) => Promise.all(specieRequest))
+    .then((specieDetails) => specieDetails)
+}
+

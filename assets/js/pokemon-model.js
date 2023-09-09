@@ -9,5 +9,5 @@ class Pokemon {
     ability;
     abilities = [];
     weight;
-    egg_groups = [];
+    species;
 }
