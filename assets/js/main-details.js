@@ -3,11 +3,10 @@ const pokemonDetails = document.getElementById('pokemonDetails')
 const maxRecords = 151
 const limit = 1
 let offset = 0;
-let id = 2
-
+let id = 1;
 
 // Lista de Pokemons
-function convertPokemonToLi(pokemon) {
+function convertPokemonToLi(pokemon, pokemonSpecie) {
     return `
         <section class="content ${pokemon.type}">
             <a href="index.html">
@@ -77,7 +76,7 @@ function convertPokemonToLi(pokemon) {
                         </li>
                         <li class="about-item">
                             <span class="about-characteristics">Egg Groups</span>
-                            <span>${pokemon.species}</span>
+                            <span>${pokemonSpecie.egg_groups}</span>
                         </li>
                         <li class="about-item">
                             <span class="about-characteristics">Egg Cycle</span>
@@ -90,20 +89,20 @@ function convertPokemonToLi(pokemon) {
     `
 }
 
+// Função para a chamada da lista de pokemons, contêm os primeiros dados do pokemon
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
         const newHtml = pokemons.map(convertPokemonToLi).join('')
         pokemonDetails.innerHTML += newHtml
     })
 }
-
 loadPokemonItens(offset, limit)
 
+// Função para a chamada dos dados detalhados do pokemon
 function loadPokemonSpecie(id) {
-    pokeSpecieApi.getSpeciePokemon(id).then((pokemons = []) => {
-        const newHtml = pokemons.map(convertPokemonToLi).join('')
-        pokemonDetails.innerHTML += newHtml
-    })
+    pokeSpecieApi.getSpeciePokemon(id).then((pokemonSpecie) => {
+        const newHtml = convertPokemonToLi(pokemonSpecie);
+        pokemonDetails.innerHTML += newHtml;
+    });
 }
-
-loadPokemonSpecie(id)
+loadPokemonSpecie(id);
