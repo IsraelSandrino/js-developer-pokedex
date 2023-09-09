@@ -72,7 +72,7 @@ function convertPokemonToLi(pokemon, pokemonSpecie) {
                     <ol class="about-list">
                         <li class="about-item">
                             <span class="about-characteristics">Gender</span>
-                            <span>87,5% 12.5%</span>
+                            <span>${pokemonSpecie.gender} %</span>
                         </li>
                         <li class="about-item">
                             <span class="about-characteristics">Egg Groups</span>
@@ -80,7 +80,7 @@ function convertPokemonToLi(pokemon, pokemonSpecie) {
                         </li>
                         <li class="about-item">
                             <span class="about-characteristics">Egg Cycle</span>
-                            <span>Grass</span>
+                            <span>"Dado não encontrado"</span>
                         </li>
                     </ol>
                 </div>

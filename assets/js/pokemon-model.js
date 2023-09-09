@@ -13,4 +13,5 @@ class Pokemon {
 
 class Specie {
     egg_groups = [];
+    gender;
 }

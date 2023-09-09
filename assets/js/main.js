@@ -25,7 +25,7 @@ function convertPokemonToLi(pokemon) {
 }
 
 function openPokemonDetail() {
-    const detailsWindow = window.open('pokemon_details.html', '_self');
+    const detailsWindow = window.open('pokemon-detail.html', '_self');
     detailsWindow.focus();
 }
 

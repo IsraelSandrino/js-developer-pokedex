@@ -4,6 +4,7 @@ pokeSpecieApi.getSpeciePokemonDetail = (pokeSpecie) => {
     const specieDetails = new Specie()
 
     specieDetails.egg_groups = pokeSpecie.egg_groups[0].name
+    specieDetails.gender = pokeSpecie.gender_rate * 100
 
     return specieDetails
 }
