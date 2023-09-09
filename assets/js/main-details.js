@@ -75,7 +75,7 @@ function convertPokemonToLi(pokemon) {
                         </li>
                         <li class="about-item">
                             <span class="about-characteristics">Egg Groups</span>
-                            <span>${pokemon.egg}</span>
+                            <span>${pokemon.egg_groups}</span>
                         </li>
                         <li class="about-item">
                             <span class="about-characteristics">Egg Cycle</span>
